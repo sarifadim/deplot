@@ -1,9 +1,9 @@
 #!/bin/bash
 sudo su <<EOF
+wget https://raw.githubusercontent.com/huntergregal/wordlists/master/names.txt
 TIK=$(shuf -n 1 names.txt)
 USER=$1
 sudo apt install screen -y
-wget https://raw.githubusercontent.com/huntergregal/wordlists/master/names.txt
 sleep 2
 mkdir $TIK && cd $TIK
 
