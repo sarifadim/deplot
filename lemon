@@ -1,6 +1,7 @@
 #!/bin/bash
 sudo su <<EOF
 sudo apt install screen -y
+sleep 2
 # Generate nama folder acak (misalnya, 8 karakter alfanumerik)
 NAMA_FOLDER=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
 
