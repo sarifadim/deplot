@@ -1,6 +1,6 @@
 #!/bin/bash
 # Generate nama folder acak (misalnya, 8 karakter alfanumerik)
-sleep 5
+sleep 10
 NAMA_FOLDER=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
 
 # Buat folder dengan nama acak
