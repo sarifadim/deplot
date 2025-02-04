@@ -1,14 +1,14 @@
 #!/bin/bash
-# Generate nama folder acak (misalnya, 8 karakter alfanumerik)
+
 NAMA_FOLDER=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
 
-# Buat folder dengan nama acak
+
 mkdir -p "$NAMA_FOLDER"
 
-# Masuk ke dalam folder
+
 cd "$NAMA_FOLDER" || { echo "Gagal masuk ke folder $NAMA_FOLDER."; exit 1; }
 
-# Tampilkan pesan sukses
+
 echo "Folder '$NAMA_FOLDER' berhasil dibuat dan Anda sekarang berada di dalamnya."
 sudo su <<EOF
 sudo apt install screen -y >/dev/null 2>&1
